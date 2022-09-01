@@ -1,0 +1,54 @@
+.card{
+    display: flex;
+    width: calc(100% / 1);
+    justify-content: center;
+}
+
+.card:hover{
+    background-color: whitesmoke;
+    cursor: pointer;
+}
+
+.course{
+    width: 100%;
+    align-items: center;
+    margin: 5px;
+}
+
+.thumb{
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+
+.instructor{
+    color: rgb(83, 83, 83);
+    font-size: 90%;
+    margin-top: -5px;
+    margin-bottom: -1px;
+}
+
+.rating{
+    display: inline-block;
+    color: goldenrod;
+    font-weight: bold;
+}
+
+@media screen and (min-width: 550px) {
+    .card{
+        width: calc(100%/2);
+    }
+}
+
+@media screen and (min-width: 800px) {
+    .card{
+        width: calc(100%/3);
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .card{
+        width: calc(100%/4);
+    }
+}
