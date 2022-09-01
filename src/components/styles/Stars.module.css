@@ -3,12 +3,12 @@
     position: relative;
     font-family: FontAwesome;
 }
-   
+
 .starsouter::before {
     content: "\f006 \f006 \f006 \f006 \f006";
     color: goldenrod;
 }
-   
+
 .starsinner {
     position: absolute;
     top: 0;
@@ -17,7 +17,7 @@
     overflow: hidden;
     width: 100%;
 }
-   
+
 .starsinner::before {
     content: "\f005 \f005 \f005 \f005 \f005";
     color: goldenrod;
