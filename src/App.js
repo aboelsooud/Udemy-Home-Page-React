@@ -1,5 +1,7 @@
 import './App.css';
 import CoursesSection from './components/CoursesSection/CoursesSection';
+import Header from './components/Header/Header';
+import Navbar from './components/Navbar/Navbar';
 
 function App() {
   const Python = {
@@ -212,7 +214,9 @@ function App() {
 
   return (
     <div className="App">
-      <CoursesSection header={Python.header} description={Python.description} courses={Python.courses}/>
+        <Navbar/>
+        <Header/>
+        <CoursesSection header={Python.header} description={Python.description} courses={Python.courses}/>
     </div>
   );
 }
