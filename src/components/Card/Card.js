@@ -2,8 +2,7 @@ import React from 'react'
 import Stars from '../Stars/Stars';
 import styles from './Card.module.css'
 
-function Card(props) {
-  const course = props.course;
+function Card({course}) {
   let instructor = "";
   
   for(const inst in course.instructors)
