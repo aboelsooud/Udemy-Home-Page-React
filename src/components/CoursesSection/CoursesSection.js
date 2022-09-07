@@ -1,6 +1,6 @@
 import React from 'react'
-import Cards from './Cards'
-import styles from './styles/coursesSection.module.css'
+import Cards from '../Cards/Cards.js'
+import styles from './coursesSection.module.css'
 
 function CoursesSection(props) {
   const { header, description, courses } = props;

@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from './styles/Stars.module.css'
+import styles from './Stars.module.css'
 
 function Stars(props) {
   const rate = (props.rate / 5) * 100;
