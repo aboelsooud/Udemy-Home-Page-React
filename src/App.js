@@ -1,5 +1,5 @@
 import './App.css';
-import CoursesSection from './components/CoursesSection';
+import CoursesSection from './components/CoursesSection/CoursesSection';
 
 function App() {
   const Python = {

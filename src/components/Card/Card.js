@@ -1,6 +1,6 @@
 import React from 'react'
-import Stars from './Stars';
-import styles from './styles/Card.module.css'
+import Stars from '../Stars/Stars';
+import styles from './Card.module.css'
 
 function Card(props) {
   const course = props.course;
