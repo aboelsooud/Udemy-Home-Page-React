@@ -1,15 +1,23 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styles from './Navbar.module.css'
 
-function Navbar() {
+function Navbar({setSearchWord}) {
+  const [searchValue, setSearchvalue] = useState('');
+
+  const searchSubmit = (e) => {
+    e.preventDefault();
+    setSearchWord(searchValue.toLowerCase());
+  }
+
   return (
     <nav className={styles.navbar}>
         <span className={`${styles.navItems} ${styles.displayBar}`}><i className="fas fa-bars fa-2x"></i></span>
         <img className={`${styles.logo} ${styles.navItems}`} src="https://www.udemy.com/staticx/udemy/images/v7/logo-udemy.svg" alt="udemy logo"/>
         <a href="#" className={`${styles.navItems} ${styles.displaySmall} ${styles.link}`}>Categories</a>
-        <form action="" className={`${styles.navItems} ${styles.displaySmall} ${styles.searchBar}`}>
+        <form action="" className={`${styles.navItems} ${styles.displaySmall} ${styles.searchBar}`} onSubmit={searchSubmit}>
             <button type="submit" className={styles.submit}><i className="fas fa-solid fa-magnifying-glass fa-1x "></i></button>
-            <input type="text" name="Search" placeholder="Search for anything" className={styles.searchField}/>
+            <input type="text" name="Search" placeholder="Search for anything" 
+              className={styles.searchField} value={searchValue} onChange={ e => setSearchvalue(e.target.value)}/>
         </form>
         <a href="#" className={`${styles.navItems} ${styles.displaySmall} ${styles.link} ${styles.displayUdemyBusiness}`}>Udemy Business</a>
         <a href="#" className={`${styles.navItems} ${styles.displaySmall} ${styles.link} ${styles.displayTeach}`}>Teach on Udemy</a>

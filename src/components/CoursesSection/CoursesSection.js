@@ -4,7 +4,7 @@ import styles from './CoursesSection.module.css'
 import axios from 'axios'
 import Loader from '../Loader/Loader';
 
-function CoursesSection() {
+function CoursesSection({searchValue}) {
   const [topic, setTopic] = useState({});
   const [isFetched, setIsFetched] = useState(false);
 
@@ -24,7 +24,7 @@ function CoursesSection() {
         <h2 className={styles.heading}>A broad selection of courses</h2>
         <p className={styles.paragraph}>Choose from 185,000 online video courses with new additions published every month</p>
         {
-          isFetched ? <Courses header={topic.header} description={topic.description} courses={topic.courses}/> : <Loader/>
+          isFetched ? <Courses header={topic.header} description={topic.description} courses={topic.courses} searchValue={searchValue}/> : <Loader/>
         } 
     </section>
   )

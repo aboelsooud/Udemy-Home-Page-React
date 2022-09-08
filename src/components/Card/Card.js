@@ -2,9 +2,13 @@ import React from 'react'
 import Stars from '../Stars/Stars';
 import styles from './Card.module.css'
 
-function Card({course}) {
+function Card({course, searchValue}) {
   let instructor = "";
+  let title = course.title;
+  title = title.toLowerCase()
   
+  if(!title.includes(searchValue)) return (null);
+
   for(const inst in course.instructors)
     instructor += course.instructors[inst].name + ', ';
   

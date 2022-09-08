@@ -1,0 +1,79 @@
+.footer{
+    background-color: #1c1d1f;
+    padding: 2rem;
+}
+
+.topFooter{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.links{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+}
+
+.links > a{
+    color: white;
+    text-decoration: none;
+    font-size: 90%;
+}
+
+.links > a:hover{
+    color: white;
+    text-decoration: underline;
+}
+
+.button{
+    order: -1;
+}
+
+.button > button{
+    padding: 9px 20px;
+    padding-left: 0px;
+    margin-bottom: 20px;
+    width: 150px;
+    background-color: transparent;
+    color: white;
+    border: solid 1px white;
+}
+
+.bottomFooter{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.bottomFooter > img{
+    width: 100px;
+    margin-top: 20px;
+}
+
+.bottomFooter > p{
+    color: white;
+    font-size: 80%;
+}
+
+@media screen and (min-width: 701px) {
+    .topFooter{
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    
+    .button{
+        order: 1;
+    }
+
+    .bottomFooter{
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .bottomFooter > p{
+        margin-top: 40px;
+    }
+}
