@@ -5,13 +5,14 @@ import styles from './Navbar.module.css'
 function Navbar({setSearchWord}) {
   const [searchValue, setSearchvalue] = useState('');
   const [searchParams, setSearchParams] = useSearchParams('');
-
+  
   useEffect( () => {
     const search = searchParams.get('filter');
     if(search != null && search !== searchValue){
       setSearchvalue(search.toLocaleLowerCase());
       setSearchWord(search.toLowerCase());
     }
+    if(search === '') setSearchParams({}); 
   },[])
 
   const searchSubmit = (e) => {
