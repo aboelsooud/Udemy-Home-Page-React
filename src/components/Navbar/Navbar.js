@@ -6,6 +6,12 @@ function Navbar({setSearchWord}) {
   const [searchValue, setSearchvalue] = useState('');
   const [searchParams, setSearchParams] = useSearchParams('');
 
+  const search = searchParams.get('filter');
+  if(search != null && search !== searchValue){
+    setSearchvalue(search.toLocaleLowerCase());
+    setSearchWord(search.toLowerCase());
+  }
+
   const searchSubmit = (e) => {
     e.preventDefault();
     if(searchValue === ''){
