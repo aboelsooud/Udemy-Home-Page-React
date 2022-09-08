@@ -1,19 +1,15 @@
-import { useState } from 'react';
 import './App.css';
-import CoursesSection from './components/CoursesSection/CoursesSection';
-import Footer from './components/Footer/Footer';
-import Header from './components/Header/Header';
-import Navbar from './components/Navbar/Navbar';
+import { Routes, Route } from 'react-router-dom';
+import Home from './pages/Home/Home';
+
 
 function App() {
-  const [searchWord, setSearchWord] = useState('');
 
   return (
     <div className="App">
-        <Navbar setSearchWord={setSearchWord}/>
-        <Header/>
-        <CoursesSection searchValue={searchWord}/>
-        <Footer/>
+        <Routes>
+          <Route path='/Udemy-Home-Page-React' element={<Home/>}></Route>
+        </Routes>
     </div>
   );
 }

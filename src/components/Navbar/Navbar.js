@@ -1,11 +1,18 @@
 import React, { useState } from 'react'
+import { useSearchParams } from 'react-router-dom';
 import styles from './Navbar.module.css'
 
 function Navbar({setSearchWord}) {
   const [searchValue, setSearchvalue] = useState('');
+  const [searchParams, setSearchParams] = useSearchParams('');
 
   const searchSubmit = (e) => {
     e.preventDefault();
+    if(searchValue === ''){
+      setSearchParams({});
+    }else{
+      setSearchParams({filter : searchValue});
+    }
     setSearchWord(searchValue.toLowerCase());
   }
 
