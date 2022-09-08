@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useSearchParams } from 'react-router-dom';
 import styles from './Navbar.module.css'
 
@@ -6,11 +6,13 @@ function Navbar({setSearchWord}) {
   const [searchValue, setSearchvalue] = useState('');
   const [searchParams, setSearchParams] = useSearchParams('');
 
-  const search = searchParams.get('filter');
-  if(search != null && search !== searchValue){
-    setSearchvalue(search.toLocaleLowerCase());
-    setSearchWord(search.toLowerCase());
-  }
+  useEffect( () => {
+    const search = searchParams.get('filter');
+    if(search != null && search !== searchValue){
+      setSearchvalue(search.toLocaleLowerCase());
+      setSearchWord(search.toLowerCase());
+    }
+  },[])
 
   const searchSubmit = (e) => {
     e.preventDefault();
