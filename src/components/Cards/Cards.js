@@ -1,8 +1,10 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import Card from '../Card/Card';
 import styles from './cards.module.css'
+import { searchValueContext } from '../../App'
 
-function Cards({courses, searchValue}) {
+function Cards({courses}) {
+  const searchValue = useContext(searchValueContext);
   const cards = courses.filter(course => course.title.toLowerCase().includes(searchValue)).map( course => <Card key={course.id} course={course}/>);
 
   return (

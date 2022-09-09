@@ -2,13 +2,13 @@ import React from 'react'
 import Cards from '../Cards/Cards.js'
 import styles from './courses.module.css'
 
-function Courses({ header, description, courses, searchValue }) {
+function Courses({ header, description, courses}) {
   return (
      <section className={styles.explain}>
          <h3 className={styles.header}>{header}</h3>
          <p className={styles.description}>{description}</p>
          <button className={styles.button}>Explore Python</button>
-         <Cards courses={courses} searchValue={searchValue}/>
+         <Cards courses={courses}/>
      </section>
   )
 }

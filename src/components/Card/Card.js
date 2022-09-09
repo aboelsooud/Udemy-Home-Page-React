@@ -1,6 +1,5 @@
 import React from 'react'
 import Popover from '@mui/material/Popover';
-import Typography from '@mui/material/Typography';
 import Stars from '../Stars/Stars';
 import styles from './Card.module.css'
 

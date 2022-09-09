@@ -1,8 +1,10 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { Link, useSearchParams } from 'react-router-dom';
 import styles from './Navbar.module.css'
+import { setSearchValueContext } from '../../App'
 
-function Navbar({setSearchWord}) {
+function Navbar() {
+  const setSearch = useContext(setSearchValueContext);
   const [searchValue, setSearchvalue] = useState('');
   const [searchParams, setSearchParams] = useSearchParams('');
   
@@ -10,7 +12,7 @@ function Navbar({setSearchWord}) {
     const search = searchParams.get('filter');
     if(search != null && search !== searchValue){
       setSearchvalue(search.toLocaleLowerCase());
-      setSearchWord(search.toLowerCase());
+      setSearch(search.toLowerCase());
     }
     if(search === '') setSearchParams({});
   },[])
@@ -24,13 +26,13 @@ function Navbar({setSearchWord}) {
       const dom = document.querySelectorAll('section');
       dom[1].scrollIntoView({behavior:"smooth", block:'start', inline:'nearest'});
     }
-    setSearchWord(searchValue.toLowerCase());
+    setSearch(searchValue.toLowerCase());
   }
 
   return (
     <nav className={styles.navbar}>
         <span className={`${styles.navItems} ${styles.displayBar}`}><i className="fas fa-bars fa-2x"></i></span>
-        <Link to ='/Udemy-Home-Page-React' onClick={() => {setSearchWord(''); setSearchvalue('');}}><img className={`${styles.logo} ${styles.navItems}`} src="https://www.udemy.com/staticx/udemy/images/v7/logo-udemy.svg" alt="udemy logo"/></Link>
+        <Link to ='/Udemy-Home-Page-React' onClick={() => {setSearch(''); setSearchvalue('');}}><img className={`${styles.logo} ${styles.navItems}`} src="https://www.udemy.com/staticx/udemy/images/v7/logo-udemy.svg" alt="udemy logo"/></Link>
         <a href="#" className={`${styles.navItems} ${styles.displaySmall} ${styles.link}`}>Categories</a>
         <form action="" className={`${styles.navItems} ${styles.displaySmall} ${styles.searchBar}`} onSubmit={searchSubmit}>
             <button type="submit" className={styles.submit}><i className="fas fa-solid fa-magnifying-glass fa-1x "></i></button>
