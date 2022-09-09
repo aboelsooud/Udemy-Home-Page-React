@@ -74,6 +74,10 @@
     border: solid 1px transparent;
 }
 
+.add:hover{
+    background-color: rgb(127, 7, 127);
+}
+
 .love{
     width: 50px;
     height: 50px;

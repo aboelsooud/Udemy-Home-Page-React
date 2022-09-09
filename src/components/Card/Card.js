@@ -39,6 +39,7 @@ function Card({course}) {
         <div>${course.price}</div>
       </div>
       <Popover
+        style={{zIndex: 50000}}
         id="mouse-over-popover"
         sx={{
           pointerEvents: 'none',
@@ -47,17 +48,25 @@ function Card({course}) {
         anchorEl={anchorEl}
         anchorOrigin={{
           vertical: 'center',
-          horizontal: 'right',
+          horizontal: 'center',
         }}
         transformOrigin={{
           vertical: 'center',
-          horizontal: 'left',
+          horizontal: 'center',
         }}
-        onClose={handlePopoverClose}
+        PaperProps={{
+          onMouseEnter: handlePopoverOpen,
+          onMouseLeave: handlePopoverClose,
+          sx: {
+              pointerEvents: 'auto'
+          }
+        }}
+        // onClose={handlePopoverClose}
         disableRestoreFocus
+        disableScrollLock
       >
         <div sx={{ p: 1 }} className={styles.popover}>
-          <h5>{course.title}</h5>
+          <h6>{course.title}</h6>
           <p className={styles.update}>Updated September 2019</p>
           <p className={styles.details}>21 total hours . All Levels . Subtitles</p>
           <p>{course.headline}</p>
