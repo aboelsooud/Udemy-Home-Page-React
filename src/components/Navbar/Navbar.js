@@ -21,7 +21,7 @@ function Navbar({setSearchWord}) {
       setSearchParams({});
     }else{
       setSearchParams({filter : searchValue});
-      const dom = document.	querySelectorAll('section');
+      const dom = document.querySelectorAll('section');
       dom[1].scrollIntoView({behavior:"smooth", block:'start', inline:'nearest'});
     }
     setSearchWord(searchValue.toLowerCase());
