@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { useSearchParams } from 'react-router-dom';
+import { Link, useSearchParams } from 'react-router-dom';
 import styles from './Navbar.module.css'
 
 function Navbar({setSearchWord}) {
@@ -12,7 +12,7 @@ function Navbar({setSearchWord}) {
       setSearchvalue(search.toLocaleLowerCase());
       setSearchWord(search.toLowerCase());
     }
-    if(search === '') setSearchParams({}); 
+    if(search === '') setSearchParams({});
   },[])
 
   const searchSubmit = (e) => {
@@ -21,6 +21,8 @@ function Navbar({setSearchWord}) {
       setSearchParams({});
     }else{
       setSearchParams({filter : searchValue});
+      const dom = document.	querySelectorAll('section');
+      dom[1].scrollIntoView({behavior:"smooth", block:'start', inline:'nearest'});
     }
     setSearchWord(searchValue.toLowerCase());
   }
@@ -28,7 +30,7 @@ function Navbar({setSearchWord}) {
   return (
     <nav className={styles.navbar}>
         <span className={`${styles.navItems} ${styles.displayBar}`}><i className="fas fa-bars fa-2x"></i></span>
-        <img className={`${styles.logo} ${styles.navItems}`} src="https://www.udemy.com/staticx/udemy/images/v7/logo-udemy.svg" alt="udemy logo"/>
+        <Link to ='/Udemy-Home-Page-React' onClick={() => {setSearchWord(''); setSearchvalue('');}}><img className={`${styles.logo} ${styles.navItems}`} src="https://www.udemy.com/staticx/udemy/images/v7/logo-udemy.svg" alt="udemy logo"/></Link>
         <a href="#" className={`${styles.navItems} ${styles.displaySmall} ${styles.link}`}>Categories</a>
         <form action="" className={`${styles.navItems} ${styles.displaySmall} ${styles.searchBar}`} onSubmit={searchSubmit}>
             <button type="submit" className={styles.submit}><i className="fas fa-solid fa-magnifying-glass fa-1x "></i></button>
