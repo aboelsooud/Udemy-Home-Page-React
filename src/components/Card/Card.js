@@ -38,7 +38,6 @@ function Card({course}) {
         <div>${course.price}</div>
       </div>
       <Popover
-        style={{zIndex: 50000}}
         id="mouse-over-popover"
         sx={{
           pointerEvents: 'none',
