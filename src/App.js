@@ -3,6 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import Home from './pages/Home/Home';
 import { createContext, useState, useEffect} from 'react';
 import axios from 'axios';
+import Navbar from './components/Navbar/Navbar';
 
 export const DataContext = createContext();
 export const isFetchedContext = createContext();
@@ -31,6 +32,7 @@ function App() {
         <isFetchedContext.Provider value={isFetched}>
           <searchValueContext.Provider value={searchValue}>
             <setSearchValueContext.Provider value={setSearchValue}>
+              <Navbar/>
               <Routes>
                 <Route path='/Udemy-Home-Page-React' element={<Home/>}></Route>
               </Routes>

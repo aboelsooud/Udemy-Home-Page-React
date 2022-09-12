@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react'
-import { Link, useSearchParams } from 'react-router-dom';
+import { Link, useNavigate, useSearchParams } from 'react-router-dom';
 import styles from './Navbar.module.css'
 import { setSearchValueContext } from '../../App'
 
@@ -7,10 +7,13 @@ function Navbar() {
   const setSearch = useContext(setSearchValueContext);
   const [searchValue, setSearchvalue] = useState('');
   const [searchParams, setSearchParams] = useSearchParams('');
+  const navigate = useNavigate();
   
   useEffect( () => {
     const search = searchParams.get('filter');
     if(search != null && search !== searchValue){
+      navigate('Udemy-Home-Page-React', {replace: true})
+      setSearchParams({filter : search});
       setSearchvalue(search.toLocaleLowerCase());
       setSearch(search.toLowerCase());
     }
@@ -19,6 +22,7 @@ function Navbar() {
 
   const searchSubmit = (e) => {
     e.preventDefault();
+    navigate('Udemy-Home-Page-React', {replace: true})
     if(searchValue === ''){
       setSearchParams({});
     }else{

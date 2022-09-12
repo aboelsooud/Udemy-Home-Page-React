@@ -47,11 +47,11 @@ function Card({course}) {
         anchorEl={anchorEl}
         anchorOrigin={{
           vertical: 'center',
-          horizontal: 'center',
+          horizontal: 'right',
         }}
         transformOrigin={{
           vertical: 'center',
-          horizontal: 'center',
+          horizontal: 'left',
         }}
         PaperProps={{
           onMouseEnter: handlePopoverOpen,
