@@ -59,7 +59,7 @@ function Card({course}) {
               pointerEvents: 'auto'
           }
         }}
-        // onClose={handlePopoverClose}
+        onClose={handlePopoverClose}
         disableRestoreFocus
         disableScrollLock
       >
