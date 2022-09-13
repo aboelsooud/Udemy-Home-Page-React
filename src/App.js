@@ -48,9 +48,9 @@ function App() {
               <setSearchValueContext.Provider value={setSearchValue}>
                 <Navbar/>
                 <Routes>
-                  <Route path='/Udemy-Home-Page-React' element={<Home/>}></Route>
-                  <Route path='/Udemy-Home-Page-React/course-info/:id' element={isFetched ? <SingleCoursePage/> : <Loader/>}/>
-                  <Route path='/*' element={<NoMatch/>}/>
+                  <Route path='/Udemy-Home-Page-React' exact element={<Home/>}></Route>
+                  <Route path='/Udemy-Home-Page-React/course-info/:id' exact element={isFetched ? <SingleCoursePage/> : <Loader/>}/>
+                  <Route path='/Udemy-Home-Page-React/*' exact element={<NoMatch/>}/>
                 </Routes>
               </setSearchValueContext.Provider>
             </searchValueContext.Provider>
