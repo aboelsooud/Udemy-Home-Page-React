@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useContext } from 'react'
 import { useParams } from 'react-router-dom'
-import { DataContext, isFetchedContext } from '../../App';
+import { DataContext } from '../../App';
 import NoMatch from '../../components/NoMatch/NoMatch';
 
 function SingleCoursePage() {
