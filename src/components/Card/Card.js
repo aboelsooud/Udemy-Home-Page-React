@@ -2,6 +2,7 @@ import React from 'react'
 import Popover from '@mui/material/Popover';
 import Stars from '../Stars/Stars';
 import styles from './Card.module.css'
+import { Link } from 'react-router-dom';
 
 function Card({course}) {
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -24,12 +25,12 @@ function Card({course}) {
   instructor = instructor.slice(0, -2);
   
   return (
-    <div className={styles.card}>
+    <Link className={styles.card} to={`/Udemy-Home-Page-React/course-info/${course.id}`}>
       <div className={styles.course} aria-owns={open ? 'mouse-over-popover' : undefined}
         aria-haspopup="true"
         onMouseEnter={handlePopoverOpen}
         onMouseLeave={handlePopoverClose}>
-        
+          
         <img className={styles.thumb} src={course.image} alt="course thumbnail"/>
         <h6>{course.title}</h6>
         <p className={styles.instructor}>{instructor}</p>
@@ -75,7 +76,7 @@ function Card({course}) {
           <button className={styles.love}><i class="fa-regular fa-heart fa-2x"></i></button>
         </div>
       </Popover>
-    </div>
+    </Link>
   )
 }
 

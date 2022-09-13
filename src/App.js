@@ -4,6 +4,7 @@ import Home from './pages/Home/Home';
 import { createContext, useState, useEffect} from 'react';
 import axios from 'axios';
 import Navbar from './components/Navbar/Navbar';
+import SingleCoursePage from './pages/SingleCoursePage/SingleCoursePage';
 
 export const DataContext = createContext();
 export const isFetchedContext = createContext();
@@ -35,6 +36,7 @@ function App() {
               <Navbar/>
               <Routes>
                 <Route path='/Udemy-Home-Page-React' element={<Home/>}></Route>
+                <Route path='/Udemy-Home-Page-React/course-info/:id' element={<SingleCoursePage/>}/>
               </Routes>
             </setSearchValueContext.Provider>
           </searchValueContext.Provider>

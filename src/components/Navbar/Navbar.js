@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react'
-import { Link, useNavigate, useSearchParams } from 'react-router-dom';
+import { createSearchParams, Link, useNavigate, useSearchParams } from 'react-router-dom';
 import styles from './Navbar.module.css'
 import { setSearchValueContext } from '../../App'
 
@@ -12,23 +12,34 @@ function Navbar() {
   useEffect( () => {
     const search = searchParams.get('filter');
     if(search != null && search !== searchValue){
-      navigate('Udemy-Home-Page-React', {replace: true})
+      navigate({
+        pathname: "Udemy-Home-Page-React",
+        search: `${createSearchParams({filter: searchValue})}`
+      })
       setSearchParams({filter : search});
       setSearchvalue(search.toLocaleLowerCase());
       setSearch(search.toLowerCase());
+      // const dom = document.querySelectorAll('section');
+      // dom[1].scrollIntoView({behavior:"smooth", block:'start', inline:'nearest'});
     }
-    if(search === '') setSearchParams({});
+    if(search === ''){
+      setSearchParams({});
+      navigate('Udemy-Home-Page-React');
+    } 
   },[])
 
   const searchSubmit = (e) => {
     e.preventDefault();
-    navigate('Udemy-Home-Page-React', {replace: true})
     if(searchValue === ''){
       setSearchParams({});
+      navigate('Udemy-Home-Page-React');
     }else{
-      setSearchParams({filter : searchValue});
-      const dom = document.querySelectorAll('section');
-      dom[1].scrollIntoView({behavior:"smooth", block:'start', inline:'nearest'});
+      navigate({
+        pathname: "Udemy-Home-Page-React",
+        search: `${createSearchParams({filter: searchValue})}`
+      })
+      // const dom = document.querySelectorAll('section');
+      // dom[1].scrollIntoView({behavior:"smooth", block:'start', inline:'nearest'});
     }
     setSearch(searchValue.toLowerCase());
   }
