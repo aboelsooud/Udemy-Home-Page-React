@@ -7,10 +7,12 @@ import Navbar from './components/Navbar/Navbar';
 import SingleCoursePage from './pages/SingleCoursePage/SingleCoursePage';
 import Loader from './components/Loader/Loader';
 import NoMatch from './components/NoMatch/NoMatch';
+import Footer from './components/Footer/Footer';
 
 export const DataContext = createContext();
 export const singlePageContext = createContext();
 export const isFetchedContext = createContext();
+export const isFetchedSingleContext = createContext();
 export const searchValueContext = createContext();
 export const setSearchValueContext = createContext();
 
@@ -19,6 +21,7 @@ function App() {
   const [isFetched, setIsFetched] = useState(false);
   const [searchValue, setSearchValue] = useState('');
   const [singlePageData, setSinglePageData] = useState({});
+  const [isFetchedSingle, setIsFetchedSingle] = useState(false);
 
   useEffect(() => {
     axios.get('https://api.jsonbin.io/v3/b/63190b40e13e6063dc9f344e')
@@ -33,6 +36,7 @@ function App() {
       axios.get('https://api.npoint.io/427e24cf2470da9aecca')
         .then(res => {
           setSinglePageData(res.data);
+          setIsFetchedSingle(true);
         })
         .catch(err => {
           console.log(err);
@@ -44,16 +48,19 @@ function App() {
       <DataContext.Provider value={coursesData}>
         <singlePageContext.Provider value={singlePageData}>
           <isFetchedContext.Provider value={isFetched}>
-            <searchValueContext.Provider value={searchValue}>
-              <setSearchValueContext.Provider value={setSearchValue}>
-                <Navbar/>
-                <Routes>
-                  <Route path='/Udemy-Home-Page-React' exact element={<Home/>}></Route>
-                  <Route path='/Udemy-Home-Page-React/course-info/:id' exact element={isFetched ? <SingleCoursePage/> : <Loader/>}/>
-                  <Route path='/Udemy-Home-Page-React/*' exact element={<NoMatch/>}/>
-                </Routes>
-              </setSearchValueContext.Provider>
-            </searchValueContext.Provider>
+            <isFetchedSingleContext.Provider value={{isFetchedSingle}}>
+              <searchValueContext.Provider value={searchValue}>
+                <setSearchValueContext.Provider value={setSearchValue}>
+                  <Navbar/>
+                  <Routes>
+                    <Route path='/Udemy-Home-Page-React' exact element={<Home/>}></Route>
+                    <Route path='/Udemy-Home-Page-React/course-info/:id' exact element={isFetched && isFetchedSingle ? <SingleCoursePage/> : <Loader/>}/>
+                    <Route path='/Udemy-Home-Page-React/*' exact element={<NoMatch/>}/>
+                  </Routes>
+                  <Footer/>
+                </setSearchValueContext.Provider>
+              </searchValueContext.Provider>
+            </isFetchedSingleContext.Provider>
           </isFetchedContext.Provider>
         </singlePageContext.Provider>
       </DataContext.Provider>

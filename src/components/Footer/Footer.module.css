@@ -58,6 +58,10 @@
     font-size: 80%;
 }
 
+.forSticky{
+    height: 50px;
+}
+
 @media screen and (min-width: 701px) {
     .topFooter{
         flex-direction: row;

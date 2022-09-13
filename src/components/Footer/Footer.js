@@ -34,6 +34,8 @@ function Footer() {
             <img src="https://www.udemy.com/staticx/udemy/images/v7/logo-udemy-inverted.svg" alt="udemy logo"/>
             <p>© 2022 Udemy, Inc.</p>
         </div>
+        <div className={styles.forSticky}>
+        </div>
     </footer>
   )
 }
