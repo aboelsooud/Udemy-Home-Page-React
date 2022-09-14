@@ -17,7 +17,7 @@ function SingleCoursePage() {
             setCurCourse(x);
             setWrongId(false);
         }else setWrongId(true);
-    }, [])
+    }, [id, courses])
 
     return (
         <> 

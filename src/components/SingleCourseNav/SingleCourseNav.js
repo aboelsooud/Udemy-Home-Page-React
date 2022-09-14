@@ -13,7 +13,7 @@ function SingleCourseNav({course}) {
         
         if(height < 70) setShowScroll(false);
         else setShowScroll(true);
-    })
+    },[])
 
     let prev = window.pageYOffset;
     window.onscroll = () => {
