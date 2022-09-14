@@ -30,7 +30,7 @@ function Card({course}) {
         aria-haspopup="true"
         onMouseEnter={handlePopoverOpen}
         onMouseLeave={handlePopoverClose}>
-          
+        
         <img className={styles.thumb} src={course.image} alt="course thumbnail"/>
         <h6>{course.title}</h6>
         <p className={styles.instructor}>{instructor}</p>
