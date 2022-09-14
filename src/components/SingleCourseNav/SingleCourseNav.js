@@ -30,6 +30,10 @@ function SingleCourseNav({course}) {
         const cur = window.innerWidth;
         if(cur <= 1080) setShowWidth(true)
         else setShowWidth(false);
+
+        const height = window.pageYOffset;
+        if(height >= 70) setShowScroll(true);
+        else setShowScroll(false);
     }   
     
     return (
