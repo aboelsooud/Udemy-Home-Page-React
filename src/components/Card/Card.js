@@ -69,9 +69,9 @@ function Card({course}) {
           <p className={styles.update}>Updated September 2019</p>
           <p className={styles.details}>21 total hours . All Levels . Subtitles</p>
           <p>{course.headline}</p>
-          <div className={styles.list}><span className={styles.check}><i class="fa-solid fa-check"></i></span><span>Create fully functional Python programs </span></div>
-          <div className={styles.list}><span className={styles.check}><i class="fa-solid fa-check"></i></span><span>To learn the python language</span></div>
-          <div className={styles.list}><span className={styles.check}><i class="fa-solid fa-check"></i></span><span>Become an experienced Python Programmer</span></div>
+          <div className={styles.list}><span className={styles.check}><i className="fa-solid fa-check"></i></span><span>Create fully functional Python programs </span></div>
+          <div className={styles.list}><span className={styles.check}><i className="fa-solid fa-check"></i></span><span>To learn the python language</span></div>
+          <div className={styles.list}><span className={styles.check}><i className="fa-solid fa-check"></i></span><span>Become an experienced Python Programmer</span></div>
           <button className={styles.add}> Add to cart</button>
           <button className={styles.love}><i class="fa-regular fa-heart fa-2x"></i></button>
         </div>

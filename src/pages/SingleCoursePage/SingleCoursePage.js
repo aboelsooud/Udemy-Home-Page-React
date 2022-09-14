@@ -4,6 +4,7 @@ import { DataContext } from '../../App';
 import NoMatch from '../../components/NoMatch/NoMatch';
 import SingleCourseHeader from '../../components/SingleCourseHeader/SingleCourseHeader';
 import SingleCourseNav from '../../components/SingleCourseNav/SingleCourseNav';
+import WhatYouWillLearn from '../../components/WhatYouWillLearn/WhatYouWillLearn';
 
 function SingleCoursePage() {
     let {id} = useParams();
@@ -25,6 +26,7 @@ function SingleCoursePage() {
                 <>
                     <SingleCourseNav course={curCourse}/>
                     <SingleCourseHeader course={curCourse}/>
+                    <WhatYouWillLearn/>
                 </>
             }
         </>
