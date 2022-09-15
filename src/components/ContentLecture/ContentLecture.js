@@ -8,7 +8,7 @@ function ContentLecture({lec}) {
     <ListItemButton>
         <div className={styles.left}>
             <span>{lec.content_summary.includes('page') ? <i className="fa-regular fa-file"></i> : <i className="fa-solid fa-circle-play"></i>}</span>
-            <ListItemText primary={lec.title}/>
+            {lec.can_be_previewed ? <ListItemText primary={lec.title} sx={{color: "#5624d0"}}/> : <ListItemText primary={lec.title}/>}
         </div>
         <div className={styles.right}>
             {lec.can_be_previewed ? <span className={styles.can_preview}>Preview</span> : <span className={styles.cannot_preview}>Preview</span>}
