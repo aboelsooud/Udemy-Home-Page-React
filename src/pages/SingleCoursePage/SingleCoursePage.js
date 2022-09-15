@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom'
 import { DataContext } from '../../App';
 import CourseContent from '../../components/CourseContent/CourseContent';
 import NoMatch from '../../components/NoMatch/NoMatch';
+import Requirements from '../../components/Requirements/Requirements';
 import SingleCourseHeader from '../../components/SingleCourseHeader/SingleCourseHeader';
 import SingleCourseNav from '../../components/SingleCourseNav/SingleCourseNav';
 import WhatYouWillLearn from '../../components/WhatYouWillLearn/WhatYouWillLearn';
@@ -30,6 +31,7 @@ function SingleCoursePage() {
                     <SingleCourseHeader course={curCourse}/>
                     <WhatYouWillLearn/>
                     <CourseContent/>
+                    <Requirements/>
                 </>
             }
         </>
