@@ -17,7 +17,7 @@ function SingleCourseHeader({course}) {
                 <a href='#ratings' className={styles.links}> (3,279 ratings) </a>
                 <span>19,830 students</span>
             </div>
-            <span className={styles.create}>Created by <a href='#avin' className={styles.links}>Avinash Jain</a>, <a href='#codex' className={styles.links}>The Codex</a></span>
+            <span className={styles.create}>Created by <a href='#Avinash' className={styles.links}>Avinash Jain</a>, <a href='#The' className={styles.links}>The Codex</a></span>
             <div className={styles.icons}>
                 <span className={styles.icon}><i className="fa-solid fa-circle-exclamation"></i> Last updated 9/2015</span>
                 <span className={styles.icon}><i className="fa-solid fa-globe"></i> English</span>

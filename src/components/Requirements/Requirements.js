@@ -9,7 +9,7 @@ function Requirements() {
         <section className={styles.section}>
             <h3 className={styles.heading}>Requirements</h3>
             <ul>
-                {data.requirements_data.items.map(item => <li className={styles.items}>{item}</li>)}
+                {data.requirements_data.items.map((item, idx) => <li key={idx} className={styles.items}>{item}</li>)}
             </ul>
         </section>
     )
