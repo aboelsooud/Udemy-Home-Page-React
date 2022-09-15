@@ -33,7 +33,7 @@ function CourseContent() {
         <section className={styles.section}>
             <h4 className={styles.heading}>Course content</h4>
             <div className={styles.aboveContent}>
-                <span className={styles.info}>{content.sections.length} sections . {content.num_of_published_lectures} lectures . {hours}h {minutes}m total length</span>
+                <span className={styles.info}>{content.sections.length} sections • {content.num_of_published_lectures} lectures • {hours}h {minutes}m total length</span>
                 <button className={styles.button} onClick={handleExpand}> {!expand ? "Expand" : "Collapse"} all sections</button>
             </div>
             <List sx={{ width: '100%', bgcolor: "#f7f9fa", border: 1, borderColor: "#e8eaec" }} disablePadding component="nav">

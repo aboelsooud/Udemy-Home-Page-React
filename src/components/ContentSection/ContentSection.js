@@ -29,7 +29,7 @@ function ContentSection({item, expand}) {
                     <ListItemText className={styles.leftData} primary={item.title}/>
                 </div>
                 <div className={styles.right}>
-                    <span>{item.lecture_count} lectures . {minute}min</span>
+                    <span>{item.lecture_count} lectures • {minute}min</span>
                 </div>
             </ListItemButton>
             <Collapse in={open} timeout="auto" unmountOnExit>
