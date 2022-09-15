@@ -32,6 +32,10 @@
     font-weight: bold;
 }
 
+.button:hover{
+    color: #401b9c;
+}
+
 @media screen and (min-width: 1081px) {
     .section{
         width: 45%;
