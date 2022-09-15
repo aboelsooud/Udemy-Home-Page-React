@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useContext, Fragment } from 'react'
 import { useParams } from 'react-router-dom'
 import { DataContext } from '../../App';
+import CourseContent from '../../components/CourseContent/CourseContent';
 import NoMatch from '../../components/NoMatch/NoMatch';
 import SingleCourseHeader from '../../components/SingleCourseHeader/SingleCourseHeader';
 import SingleCourseNav from '../../components/SingleCourseNav/SingleCourseNav';
@@ -17,7 +18,8 @@ function SingleCoursePage() {
         if(x !== undefined){
             setCurCourse(x);
             setWrongId(false);
-        }else setWrongId(true);
+        }else 
+            setWrongId(true);
     }, [id, courses])
 
     return (
@@ -27,6 +29,7 @@ function SingleCoursePage() {
                     <SingleCourseNav course={curCourse}/>
                     <SingleCourseHeader course={curCourse}/>
                     <WhatYouWillLearn/>
+                    <CourseContent/>
                 </>
             }
         </>

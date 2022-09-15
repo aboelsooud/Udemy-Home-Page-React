@@ -1,12 +1,13 @@
 import React from 'react'
 import Stars from '../Stars/Stars'
 import styles from './SingleCourseHeader.module.css'
+import { Link } from 'react-router-dom'
 
 function SingleCourseHeader({course}) {
   return (
     <header className={styles.header}>
         <div className={styles.card}>
-            <h6><a href='#' className={styles.links}>Development</a> {'>'} <a href='#' className={styles.links}>Programming Languages</a> {'>'} <a href='#' className={styles.links}>Python</a></h6> 
+            <h6><Link to='/Udemy-Home-Page-React' className={styles.links}>Home</Link> <i className="fa-solid fa-chevron-right"></i> <Link to='' className={styles.links}>Python</Link></h6> 
             <img src={course.image} alt="course thumb" className={styles.image}/>
             <h2 className={styles.title}>{course.title}</h2>
             <p className={styles.headline}>{course.headline}</p>

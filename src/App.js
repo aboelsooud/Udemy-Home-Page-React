@@ -12,7 +12,6 @@ import Footer from './components/Footer/Footer';
 export const DataContext = createContext();
 export const singlePageContext = createContext();
 export const isFetchedContext = createContext();
-export const isFetchedSingleContext = createContext();
 export const searchValueContext = createContext();
 export const setSearchValueContext = createContext();
 
@@ -48,19 +47,17 @@ function App() {
       <DataContext.Provider value={coursesData}>
         <singlePageContext.Provider value={singlePageData}>
           <isFetchedContext.Provider value={isFetched}>
-            <isFetchedSingleContext.Provider value={{isFetchedSingle}}>
-              <searchValueContext.Provider value={searchValue}>
-                <setSearchValueContext.Provider value={setSearchValue}>
-                  <Navbar/>
-                  <Routes>
-                    <Route path='/Udemy-Home-Page-React' exact element={<Home/>}></Route>
-                    <Route path='/Udemy-Home-Page-React/course-info/:id' exact element={isFetched && isFetchedSingle ? <SingleCoursePage/> : <Loader/>}/>
-                    <Route path='/Udemy-Home-Page-React/*' exact element={<NoMatch/>}/>
-                  </Routes>
-                  <Footer/>
-                </setSearchValueContext.Provider>
-              </searchValueContext.Provider>
-            </isFetchedSingleContext.Provider>
+            <searchValueContext.Provider value={searchValue}>
+              <setSearchValueContext.Provider value={setSearchValue}>
+                <Navbar/>
+                <Routes>
+                  <Route path='/Udemy-Home-Page-React' exact element={<Home/>}></Route>
+                  <Route path='/Udemy-Home-Page-React/course-info/:id' exact element={isFetched && isFetchedSingle ? <SingleCoursePage/> : <Loader/>}/>
+                  <Route path='/Udemy-Home-Page-React/*' exact element={<NoMatch/>}/>
+                </Routes>
+                <Footer/>
+              </setSearchValueContext.Provider>
+            </searchValueContext.Provider>
           </isFetchedContext.Provider>
         </singlePageContext.Provider>
       </DataContext.Provider>
