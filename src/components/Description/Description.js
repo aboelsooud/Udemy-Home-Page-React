@@ -13,7 +13,7 @@ function Description() {
         <section className={styles.section}>
             <h3 className={styles.heading}>Description</h3>
             { open ? <div className={styles.hide} dangerouslySetInnerHTML={{ __html: data.description }}/> : <div dangerouslySetInnerHTML={{ __html: data.description }}/>}
-            <button className={styles.button} onClick={() => setOpen(!open)}>Show more {open ? <ExpandMore/> : <ExpandLess/>}</button>
+            <button className={styles.button} onClick={() => setOpen(!open)}>Show {open ? 'more' : 'less'} {open ? <ExpandMore/> : <ExpandLess/>}</button>
         </section>
     )
 }

@@ -28,7 +28,7 @@ function Instructor({instructor}) {
                 </div>
             </div>
             { open ? <div className={styles.hide} dangerouslySetInnerHTML={{ __html: instructor.description }}/> : <div dangerouslySetInnerHTML={{ __html: instructor.description }}/>}
-            <button className={styles.button} onClick={() => setOpen(!open)}>Show more {open ? <ExpandMore/> : <ExpandLess/>}</button>
+            <button className={styles.button} onClick={() => setOpen(!open)}>Show {open ? 'more' : 'less'} {open ? <ExpandMore/> : <ExpandLess/>}</button>
         </div>
     )
 }
