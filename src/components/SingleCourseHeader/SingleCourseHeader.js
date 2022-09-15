@@ -19,7 +19,7 @@ function SingleCourseHeader({course}) {
             </div>
             <span className={styles.create}>Created by <a href='#avin' className={styles.links}>Avinash Jain</a>, <a href='#codex' className={styles.links}>The Codex</a></span>
             <div className={styles.icons}>
-                <span className={styles.icon}><i className="fa-solid fa-exclamation"></i> Last updated 9/2015</span>
+                <span className={styles.icon}><i className="fa-solid fa-circle-exclamation"></i> Last updated 9/2015</span>
                 <span className={styles.icon}><i className="fa-solid fa-globe"></i> English</span>
                 <span className={styles.icon}><i className="fa-solid fa-closed-captioning"></i> English</span>
             </div>
