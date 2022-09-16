@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/Udemy-Home-Page-React/static/css/main.7b2e4273.css",
-    "main.js": "/Udemy-Home-Page-React/static/js/main.536d2e47.js",
+    "main.css": "/Udemy-Home-Page-React/static/css/main.d5ab3764.css",
+    "main.js": "/Udemy-Home-Page-React/static/js/main.b524a871.js",
     "static/js/787.aad65a53.chunk.js": "/Udemy-Home-Page-React/static/js/787.aad65a53.chunk.js",
     "index.html": "/Udemy-Home-Page-React/index.html",
-    "main.7b2e4273.css.map": "/Udemy-Home-Page-React/static/css/main.7b2e4273.css.map",
-    "main.536d2e47.js.map": "/Udemy-Home-Page-React/static/js/main.536d2e47.js.map",
+    "main.d5ab3764.css.map": "/Udemy-Home-Page-React/static/css/main.d5ab3764.css.map",
+    "main.b524a871.js.map": "/Udemy-Home-Page-React/static/js/main.b524a871.js.map",
     "787.aad65a53.chunk.js.map": "/Udemy-Home-Page-React/static/js/787.aad65a53.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.7b2e4273.css",
-    "static/js/main.536d2e47.js"
+    "static/css/main.d5ab3764.css",
+    "static/js/main.b524a871.js"
   ]
 }
