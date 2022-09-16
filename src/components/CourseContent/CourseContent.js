@@ -1,5 +1,4 @@
 import { List } from '@mui/material';
-import { blue } from '@mui/material/colors';
 import React, { useContext, useEffect, useState } from 'react'
 import { singlePageContext } from '../../App'
 import ContentSection from '../ContentSection/ContentSection';
@@ -18,7 +17,7 @@ function CourseContent() {
     
     useEffect(() => {
         if(content.sections.length <= 10) setShowmore(true);
-    })
+    },[content.sections.length])
 
     const handleExpand = () =>{
         setExpand(!expand);
