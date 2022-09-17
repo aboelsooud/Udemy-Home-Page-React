@@ -63,6 +63,10 @@
     border-radius: 50%;
 }
 
+.button:hover{
+    background-color: whitesmoke;
+}
+
 .report{
     font-size: 90%;
     color: #1c1d1f;
@@ -70,6 +74,7 @@
 
 .report:hover{
     color: #1c1d1f;
+    font-weight: bold;
 }
 
 .report:visited{
