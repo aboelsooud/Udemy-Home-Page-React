@@ -15,7 +15,7 @@ function Feedback() {
     const [showmore, setShowmore] = useState(true);
 
     return (
-        <section className={styles.section}>
+        <section className={styles.section} id='ratings'>
             <h3 className={styles.heading}>Student feedback</h3>
             <div className={styles.head}>
                 <div className={styles.course_rating}>
