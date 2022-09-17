@@ -9,6 +9,7 @@ import NoMatch from '../../components/NoMatch/NoMatch';
 import Requirements from '../../components/Requirements/Requirements';
 import SingleCourseHeader from '../../components/SingleCourseHeader/SingleCourseHeader';
 import SingleCourseNav from '../../components/SingleCourseNav/SingleCourseNav';
+import StickyCard from '../../components/StickyCard/StickyCard';
 import WhatYouWillLearn from '../../components/WhatYouWillLearn/WhatYouWillLearn';
 
 function SingleCoursePage() {
@@ -30,6 +31,7 @@ function SingleCoursePage() {
         <> 
             {worngId ? <NoMatch/> : 
                 <>
+                    <StickyCard course={curCourse}/>
                     <SingleCourseNav course={curCourse}/>
                     <SingleCourseHeader course={curCourse}/>
                     <WhatYouWillLearn/>
